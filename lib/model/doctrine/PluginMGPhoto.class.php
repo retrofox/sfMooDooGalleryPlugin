@@ -16,10 +16,6 @@ abstract class PluginMGPhoto extends BaseMGPhoto
     return $this->getTitle();
   }
 
-  public function getGallery() {
-    return $this->getMGGallery();
-  }
-
   public function getPhotoBySize($size = null) {
     if(is_null($size)) return $this->getPhoto();
     else {
