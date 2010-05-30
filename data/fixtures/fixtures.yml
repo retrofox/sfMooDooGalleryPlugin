@@ -1,0 +1,10 @@
+MGAlbum:
+  family_album:
+    title:          Family Album
+    description:    My familiar album
+
+MGGallery:
+  family_album_symmer_92:
+    title:          Summer 92
+    description:    beach vacation
+    MGAlbum:        family_album

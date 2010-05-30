@@ -1,0 +1,15 @@
+# sfMooDooPlugin plugin (for symfony 1.4) #
+
+* depend of sfImageTransformPlugin
+http://www.symfony-project.org/plugins/sfImageTransformPlugin
+
+* Create upload ir, by default, web/uploads/mooDooGallery
+* assign all writable
+  chmod 777 mooDooGallery/ -R
+
+* add plugin assets
+./symfony plugin:publish-assets
+
+
+Helper
+mooDooGallery
