@@ -10,11 +10,16 @@
  */
 class mgPhotoComponents extends sfComponents
 {
+
   public function executeLi_photo() {
     if(!isset($this->options)) $this->options = array();
-
     if(!array_key_exists('size', $this->options)) $this->options['size'] = 'tiny';
+    if(!isset($this->mg_photo)) throw new Exception('The $mg_photo object is necessary.');
+  }
 
+  public function executeLi_photo_box() {
+    if(!isset($this->options)) $this->options = array();
+    if(!array_key_exists('size', $this->options)) $this->options['size'] = 'tiny';
     if(!isset($this->mg_photo)) throw new Exception('The $mg_photo object is necessary.');
   }
 }

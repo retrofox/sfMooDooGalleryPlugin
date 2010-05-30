@@ -1,0 +1,67 @@
+# mooDooGalley Album
+MGAlbum:
+  actAs:
+    - Timestampable
+  tableName:                    mdgalledy_album
+  columns:
+    id:                         {type: integer, primary: true, autoincrement: true}
+    author_id:                  integer(4)
+    title:                      {type: string(100), notnull: true}
+    description:                {type: clob}
+  relations:
+    Galleries:                  {class: MGGallery, local: album_id, foreign: gallery_id, refClass: MGAlbumGallery}
+    Author:                     {local: author_id, foreign: id, class: sfGuardUser}
+
+# Album <-> Gallery
+MGAlbumGallery:
+  tableName:                    mdgalledy_album_gallery
+  columns:
+    gallery_id:                 {type: integer}
+    album_id:                   {type: integer}
+
+# mooDooGalley
+MGGallery:
+  actAs:
+    - Timestampable
+  tableName:                    mdgalledy_gallery
+  columns:
+    id:                         {type: integer, primary: true, autoincrement: true}
+    author_id:                  integer(4)
+    title:                      {type: string(100), notnull: true}
+    description:                {type: clob}
+  relations:
+    Albums:                     {class: MGAlbum, local: gallery_id, foreign: album_id, refClass: MGAlbumGallery}
+    Photos:                     {class: MGPhoto, local: gallery_id, foreign: photo_id, refClass: MGGalleryPhoto}
+    Author:                     {local: author_id, foreign: id, class: sfGuardUser}
+
+# Gallery <-> Photo
+MGGalleryPhoto:
+  tableName:                    mdgalledy_gallery_photo
+  columns:
+    gallery_id:                 {type: integer}
+    photo_id:                   {type: integer}
+
+# mooDooGalley Photo
+MGPhoto:
+  actAs:
+    - Timestampable
+  tableName:                    mdgalledy_photo
+  columns:
+    id:                         {type: integer, primary: true, autoincrement: true}
+    author_id:                  integer(4)
+    title:                      {type: string(100), notnull: true}
+    description:                {type: clob}
+    photo:                      {type: string(255), notnull: true}
+  relations:
+    Galleries:                  {class: MGGallery, local: photo_id, foreign: gallery_id, refClass: MGGalleryPhoto}
+    Author:                     {local: author_id, foreign: id, class: sfGuardUser}
+
+# mooDooGalley Categories
+MGCategory:
+  actAs:
+    - Timestampable
+  tableName:                    mdgalledy_category
+  columns:
+    id:                         {type: integer, primary: true, autoincrement: true}
+    title:                      {type: string(100), notnull: true}
+    description:                {type: clob}

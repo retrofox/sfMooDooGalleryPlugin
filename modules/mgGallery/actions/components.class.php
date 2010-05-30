@@ -12,6 +12,7 @@ class mgGalleryComponents extends sfComponents
 {
   public function executeUl_gallery() {
     if(!isset($this->options)) $this->options = array();
+    if(!array_key_exists('type', $this->options)) $this->options['type'] = 'box';
     if(!isset($this->mg_gallery)) throw new Exception('The $mg_gallery object is necessary.');
   }
 }
