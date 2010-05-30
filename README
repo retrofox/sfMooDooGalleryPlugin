@@ -10,6 +10,9 @@ http://www.symfony-project.org/plugins/sfImageTransformPlugin
 * add plugin assets
 ./symfony plugin:publish-assets
 
+*lightbox
+http://reghellin.com/milkbox/#
+
 
 Helper
 mooDooGallery

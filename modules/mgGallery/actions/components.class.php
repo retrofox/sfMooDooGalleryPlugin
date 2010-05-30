@@ -11,6 +11,11 @@
 class mgGalleryComponents extends sfComponents
 {
   public function executeUl_gallery() {
+    $this->addMilkbox = sfConfig::get('app_sfMooDooGalleryPlugin_add_milkbox');
+    $this->addMooCore = sfConfig::get('app_sfMooDooGalleryPlugin_add_mootools-core');
+    $this->addMooMore = sfConfig::get('app_sfMooDooGalleryPlugin_add_mootools-more');
+
+
     if(!isset($this->options)) $this->options = array();
     if(!array_key_exists('type', $this->options)) $this->options['type'] = 'box';
     if(!isset($this->mg_gallery)) throw new Exception('The $mg_gallery object is necessary.');

@@ -6,6 +6,11 @@ all:
     web_dir:                    /uploads/mooDooGallery
     no_image_name:              moodoo_no_image_
 
+    # lightbox
+    add_milkbox:                true
+    add_mootools-core:          false
+    add_mootools-more:          false
+
     generate_images:            true
 
     image_size:
