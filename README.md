@@ -1,5 +1,5 @@
-sfMooDooPlugin plugin
-=====================
+sfMooDooPlugin
+=============
 
 ## Summary
 
