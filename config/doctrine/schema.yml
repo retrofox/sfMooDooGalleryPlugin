@@ -17,6 +17,9 @@ MGAlbumGallery:
   columns:
     gallery_id:                 {type: integer}
     album_id:                   {type: integer}
+  relations:
+    MGAlbum:                    {local: album_id, foreign: id, onDelete: CASCADE}
+    MGGallery:                  {local: gallery_id, foreign: id, onDelete: CASCADE}
 
 # mooDooGalley
 MGGallery:
@@ -38,6 +41,9 @@ MGGalleryPhoto:
   columns:
     gallery_id:                 {type: integer}
     photo_id:                   {type: integer}
+  relations:
+    MGGallery:                  {local: gallery_id, foreign: id, onDelete: CASCADE}
+    MGPhoto:                    {local: photo_id, foreign: id, onDelete: CASCADE}
 
 # mooDooGalley Photo
 MGPhoto:
